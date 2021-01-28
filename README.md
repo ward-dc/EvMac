@@ -5,8 +5,9 @@ evClient is an unofficial client for the browser game [ev.io](https://ev.io). Th
 
 ## Client Shortcuts
 
-F1 - Opens a dialog where you can join your friends via an invite link (coming soon)
+F1 - Opens Home page
 
+F2 - Joins your friends via an invite link (clipboard)
 
 ## Installation
 

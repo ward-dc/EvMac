@@ -1,23 +1,75 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "EvClient",
+  "version": "1.0.1",
+  "description": "Official Ev.io Client",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build-win": "electron-builder -w",
+    "pb-win": "electron-builder -w -p always",
+    "build-mac": "electron-builder -m"
   },
-  "repository": "https://github.com/PoweredByWard/Evio",
+  "build": {
+    "appId": "org.electron.EvClient",
+    "asar": false,
+    "productName": "EvClient",
+    "win": {
+      "target": "nsis",
+      "icon": "build/logo.png",
+      "publish": [
+        {
+          "provider": "github",
+          "url": "https://github.com/PoweredByWard/Evio/releases"
+        }
+      ]
+    },
+    "nsis": {
+      "icon": "build/logo.png",
+      "oneClick": false,
+      "perMachine": true,
+      "license": "",
+      "artifactName": "EvClient-Windows.${ext}",
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": true,
+      "runAfterFinish": true,
+      "shortcutName": "EvClient",
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build/logo.png"
+    },
+    "dmg": {
+      "title": "EvClient",
+      "artifactName": "EvClient-Mac.dmg"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "snap",
+        "rpm"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PoweredByWard/Evio.git"
+  },
   "keywords": [
     "Ev",
     "ev.io"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
-  "devDependencies": {
-    "electron": "^11.2.1"
-  },
+  "author": "Ev.io",
+  "license": "ISC",
   "dependencies": {
     "electron-localshortcut": "^3.2.1",
-    "electron-prompt": "^1.6.1"
+    "electron-log": "^4.3.1",
+    "electron-prompt": "^1.6.1",
+    "electron-updater": "^4.3.5"
+  },
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-builder": "^22.9.1"
   }
 }
