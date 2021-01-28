@@ -82,9 +82,10 @@ function Init() {
 }
 
 function createNewWindow(url, mainWindow) {
+  const { width, height } = screen.getPrimaryDisplay().workAreaSize;
   var win = new BrowserWindow({
-    width: 1000,
-    height: 780,
+    width: width *0.8,
+    height: height *0.8,
     show: false,
     parent: mainWindow,
     removeMenu: true,
