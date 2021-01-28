@@ -19,7 +19,7 @@
       "publish": [
         {
           "provider": "github",
-          "url": "https://github.com/PoweredByWard/Evio/releases"
+          "url": "https://github.com/PoweredByWard/Ev/releases"
         }
       ]
     },
