@@ -4,7 +4,7 @@ const shortcut = require("electron-localshortcut");
 const path = require("path");
 const prompt = require("electron-prompt");
 var mainWindow;
-let fromlogin =false;
+let fromlogin = false;
 
 function Init() {
   mainWindow = new BrowserWindow({
@@ -15,18 +15,20 @@ function Init() {
   });
   mainWindow.on("close", () => {
     mainWindow = null;
-    if(!fromlogin){
+    if (!fromlogin) {
       app.quit();
     }
   });
   mainWindow.setFullScreen(true);
   mainWindow.loadURL("https://ev.io/");
-  mainWindow.webContents.on("did-finish-load", (event) => {
-    if (mainWindow.webContents.getURL() == "https://ev.io/user/login") {
-      mainWindow.loadURL("https://ev.io/");
-      createNewWindow("https://ev.io/user/login", mainWindow);
-    }
-  });
+  if (process.platform == "win32") {
+    mainWindow.webContents.on("did-finish-load", (event) => {
+      if (mainWindow.webContents.getURL() == "https://ev.io/user/login") {
+        mainWindow.loadURL("https://ev.io/");
+        createNewWindow("https://ev.io/user/login", mainWindow);
+      }
+    });
+  }
   function LinkBox() {
     function input() {
       var myPrompt = prompt({
@@ -47,9 +49,9 @@ function Init() {
   }
   let shortcut1 = "F1";
   let shortcut2 = "F2";
-  if (process.platform == "darwin"){
-    shortcut1="CommandOrControl+"+shortcut1;
-    shortcut2 ="CommandOrControl+"+shortcut2;
+  if (process.platform == "darwin") {
+    shortcut1 = "CommandOrControl+" + shortcut1;
+    shortcut2 = "CommandOrControl+" + shortcut2;
   }
   shortcut.register(mainWindow, shortcut2, () => {
     LinkBox();
@@ -89,8 +91,8 @@ function Init() {
 function createNewWindow(url, mainWindow) {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
   var win = new BrowserWindow({
-    width: width *0.8,
-    height: height *0.8,
+    width: width * 0.8,
+    height: height * 0.8,
     show: false,
     parent: mainWindow,
     removeMenu: true,
@@ -120,8 +122,8 @@ function createNewWindow(url, mainWindow) {
       setTimeout(() => {
         fromlogin = true;
         mainWindow.close();
-        Init()
-        fromlogin=false;
+        Init();
+        fromlogin = false;
       }, 500);
     }
   });
