@@ -14,7 +14,7 @@
     "asar": false,
     "productName": "EvClient",
     "mac": {
-      "icon": "./public/icons/mac/icon.icns",
+      "icon": "build/logo.png",
       "category": "public.app-category.utilities"
     },
     "win": {

@@ -83,6 +83,7 @@ function createNewWindow(url, mainWindow) {
     parent: mainWindow,
     removeMenu:true,
   });
+  win.setSimpleFullScreen(false);
   win.loadURL(url);
   win.webContents.on("dom-ready", (event) => {
     event.preventDefault();
@@ -102,6 +103,7 @@ function createNewWindow(url, mainWindow) {
     if (win.webContents.getURL() == "https://ev.io/") {
       win.close();
       mainWindow.webContents.reload();
+      mainWindow.loadURL("https://ev.io/")
     }
   });
 }
