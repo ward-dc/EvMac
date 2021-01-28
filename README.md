@@ -1,5 +1,5 @@
 # evClient
-evClient is the Official client for [ev.io](https://ev.io). By downloading evClient, you promise to adhere to the following rules:
+evClient is the Official client for [ev.io](https://ev.io). By downloading evClient, you promise to adhere to the following rule:
 
 1. You should use the client without the intention of stealing the code or modifying the code in the client without permission from the developers.
 
