@@ -20,16 +20,14 @@ F2 - Joins your friends via an invite link (clipboard)
 6. Install.
 
 ### For Mac
-  #### Linux
-  1. Install [here](https://github.com/PoweredByWard/evClient/releases/tag/L1.01)
-  2. Run PoweredClient
-  #### Mac
-   Coming soon
+1. Install EvClient.app.zip [here](https://github.com/PoweredByWard/Ev/releases/tag/m.1.0.0)
+2. Go to your downloads.
+3. Drag it to your desktop
+4. Right click and press 'Open'.
+5. A pop up will apear this is because ev.io is not a know MacOS publisher.
+6. Click 'open'.
+
 
 ## Contact
 
-To report issues or enquire about something, you may send me a DM (Powered#3959).
-
-## Credits
-
-Developed in collaboration by PoweredTV
+To report issues or enquire about something, you may join ev.io [Discord server](https://discord.com/invite/PsqyKjDKBZ)
