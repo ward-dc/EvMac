@@ -38,7 +38,9 @@
     },
     "mac": {
       "target": "dmg",
-      "icon": "build/logo.ico"
+      "installerIcon": "build/logo.ico",
+      "uninstallerIcon": "build/logo.ico",
+      "installerHeaderIcon ": "build/logo.ico"
     },
     "dmg": {
       "title": "EvClient",
