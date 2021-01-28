@@ -45,8 +45,13 @@ function Init() {
   function ispasted(url) {
     mainWindow.loadURL(url);
   }
-
-  shortcut.register(mainWindow, "F2", () => {
+  let shortcut1 = "F1";
+  let shortcut2 = "F2";
+  if (process.platform === "darwin"){
+    shortcut1="à"
+    shortcut2 = "ç";
+  }
+  shortcut.register(mainWindow, shortcut2, () => {
     LinkBox();
     //check paste for joining private game
     let clipboardText = clipboard.readText();
@@ -56,7 +61,7 @@ function Init() {
     ispasted(clipboardText);
   });
 
-  shortcut.register(mainWindow, "F1", () => {
+  shortcut.register(mainWindow, shortcut1, () => {
     mainWindow.loadURL("https://ev.io/");
   });
 

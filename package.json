@@ -6,16 +6,28 @@
   "scripts": {
     "start": "electron .",
     "build-win": "electron-builder -w",
+    "build-linux": "electron-builder --linux",
+    "pb-linux": "electron-builder --linux -p always",
     "pb-win": "electron-builder -w -p always",
     "build-mac": "electron-builder -m"
   },
   "build": {
     "appId": "org.electron.EvClient",
+    "author":"ev.io <chris@addictinggames.com>",
     "asar": false,
     "productName": "EvClient",
     "mac": {
       "icon": "build/logo.png",
       "category": "public.app-category.utilities"
+    },
+    "linux": {
+      "icon": "build/logo.png",
+      "target": [
+        "deb",
+        "snap",
+        "rpm"
+      ],
+      "category": "Utility"
     },
     "win": {
       "target": "nsis",
@@ -42,13 +54,6 @@
     "dmg": {
       "title": "EvClient",
       "artifactName": "EvClient-Mac.dmg"
-    },
-    "linux": {
-      "target": [
-        "deb",
-        "snap",
-        "rpm"
-      ]
     }
   },
   "repository": {
