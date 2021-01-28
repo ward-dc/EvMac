@@ -8,6 +8,7 @@ var mainWindow;
 function Init() {
   mainWindow = new BrowserWindow({
     webPreferences: {
+      nodeIntegration: true,
       preload: path.join(__dirname, "preload.js"),
     },
     removeMenu:true,
@@ -82,6 +83,9 @@ function createNewWindow(url, mainWindow) {
     show: false,
     parent: mainWindow,
     removeMenu:true,
+    webPreferences: {
+      nodeIntegration: true,
+    }
   });
   win.setSimpleFullScreen(false);
   win.loadURL(url);
