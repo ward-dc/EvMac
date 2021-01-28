@@ -4,6 +4,7 @@ const shortcut = require("electron-localshortcut");
 const path = require("path");
 const prompt = require("electron-prompt");
 var mainWindow;
+let fromlogin =false;
 
 function Init() {
   mainWindow = new BrowserWindow({
@@ -14,7 +15,9 @@ function Init() {
   });
   mainWindow.on("close", () => {
     mainWindow = null;
-    app.quit();
+    if(!fromlogin){
+      app.quit();
+    }
   });
   mainWindow.setFullScreen(true);
   mainWindow.loadURL("https://ev.io/");
@@ -109,8 +112,10 @@ function createNewWindow(url, mainWindow) {
     if (win.webContents.getURL() == "https://ev.io/") {
       win.close();
       setTimeout(() => {
+        fromlogin = true;
         mainWindow.close();
         Init()
+        fromlogin=false;
       }, 500);
     }
   });
