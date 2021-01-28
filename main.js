@@ -182,6 +182,7 @@ app.whenReady().then(() => {
 });
 app.on('browser-window-created',function(e,window) {
   window.setMenu(null);
+  window.setFullScreen(false);
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
