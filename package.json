@@ -37,10 +37,7 @@
       "allowToChangeInstallationDirectory": true
     },
     "mac": {
-      "target": "dmg",
-      "installerIcon": "build/logo.ico",
-      "uninstallerIcon": "build/logo.ico",
-      "installerHeaderIcon ": "build/logo.ico"
+      "target": "dmg"
     },
     "dmg": {
       "title": "EvClient",
