@@ -13,7 +13,6 @@
   },
   "build": {
     "appId": "org.electron.EvClient",
-    "author":"ev.io <chris@addictinggames.com>",
     "asar": false,
     "productName": "EvClient",
     "mac": {
