@@ -13,6 +13,10 @@
     "appId": "org.electron.EvClient",
     "asar": false,
     "productName": "EvClient",
+    "mac": {
+      "icon": "./public/icons/mac/icon.icns",
+      "category": "public.app-category.utilities"
+    },
     "win": {
       "target": "nsis",
       "icon": "build/logo.png",
@@ -24,7 +28,6 @@
       ]
     },
     "nsis": {
-      "icon": "build/logo.png",
       "oneClick": false,
       "perMachine": true,
       "license": "",
@@ -35,9 +38,6 @@
       "runAfterFinish": true,
       "shortcutName": "EvClient",
       "allowToChangeInstallationDirectory": true
-    },
-    "mac": {
-      "target": "dmg"
     },
     "dmg": {
       "title": "EvClient",
