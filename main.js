@@ -47,9 +47,9 @@ function Init() {
   }
   let shortcut1 = "F1";
   let shortcut2 = "F2";
-  if (process.platform === "darwin"){
-    shortcut1="à"
-    shortcut2 = "ç";
+  if (process.platform == "darwin"){
+    shortcut1="CommandOrControl+"+shortcut1;
+    shortcut2 ="CommandOrControl+"+shortcut2;
   }
   shortcut.register(mainWindow, shortcut2, () => {
     LinkBox();
