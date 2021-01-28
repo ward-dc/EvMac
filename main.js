@@ -73,8 +73,8 @@ function Init() {
   shortcut.register(mainWindow, "Alt+F4", () => {
     app.quit();
   });
-  shortcut.register(initWin, "F11", () => {
-    initWin.setSimpleFullScreen(!initWin.isSimpleFullScreen());
+  shortcut.register(mainWindow, "F11", () => {
+    mainWindow.setSimpleFullScreen(!mainWindow.isSimpleFullScreen());
   });
 }
 
@@ -109,7 +109,8 @@ function createNewWindow(url, mainWindow) {
     if (win.webContents.getURL() == "https://ev.io/") {
       win.close();
       setTimeout(() => {
-        mainWindow.loadURL("https://ev.io/");
+        mainWindow.close();
+        Init()
       }, 500);
     }
   });
