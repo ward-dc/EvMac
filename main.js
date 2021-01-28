@@ -8,11 +8,14 @@ var mainWindow;
 function Init() {
   mainWindow = new BrowserWindow({
     webPreferences: {
-      nodeIntegration: true,
       preload: path.join(__dirname, "preload.js"),
     },
     removeMenu:true,
   });
+  mainWindow.on("close", () => {
+    mainWindow = null;
+    app.quit();
+ });
   mainWindow.setFullScreen(true);
   mainWindow.loadURL("https://ev.io/");
   mainWindow.webContents.on("did-finish-load", (event) => {
