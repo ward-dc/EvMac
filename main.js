@@ -6,6 +6,14 @@ const prompt = require("electron-prompt");
 var mainWindow;
 let fromlogin = false;
 
+if (process.platform == "win32") {
+  app.commandLine.appendSwitch("ignore-gpu-blacklist");
+  app.commandLine.appendSwitch("disable-gpu-vsync");
+  app.commandLine.appendSwitch("enable-pointer-lock-options");
+  app.commandLine.appendSwitch("enable-quic");
+  app.commandLine.appendSwitch("disable-accelerated-video-decode", false);
+}
+
 function Init() {
   mainWindow = new BrowserWindow({
     webPreferences: {
