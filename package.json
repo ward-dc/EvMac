@@ -67,7 +67,7 @@
   "license": "ISC",
   "dependencies": {
     "electron-localshortcut": "^3.2.1",
-    "electron-log": "^4.3.1",
+    "electron-log": "^4.4.6",
     "electron-prompt": "^1.6.1",
     "electron-updater": "^4.3.5"
   },
